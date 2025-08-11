@@ -3,23 +3,23 @@ using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.ChatCompletion;
 using Microsoft.SemanticKernel.Connectors.OpenAI;
 using Microsoft.SemanticKernel.Memory;
-
+using Microsoft.Extensions.Configuration;
 internal class Program
 {
-    private static async global::System.Threading.Tasks.Task Main(string[] args)
+    private static async Task Main(string[] args)
     {
-        // var kernel = Kernel
-        //     .CreateBuilder()
-        //     .AddOpenAIChatCompletion(
-        //         "gpt-4o-mini",
-        //         "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"
-        //     )
-        //     .Build();
+        // Set up configuration
+        IConfiguration config = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+            .Build();
+
+        string apiKey = config["OpenAI:ApiKey"];
         var builder = Kernel
             .CreateBuilder()
             .AddOpenAIChatCompletion(
                 "gpt-4o-mini",
-                "API_KEY_HERE"
+                apiKey // use the value from appsettings.json
             );
 
         builder.Plugins.AddFromType<TaskPlugin>("ToDo");
@@ -57,19 +57,5 @@ internal class Program
         }
     }
 }
-// const string prompt =
-//     @"
-// You are an AI-powered to-do assistant. Based on the user's input, generate a simple to-do list.
-// Return the tasks as a numbered list.
-// ---
-// User request: {{$input}}
-// ";
 
-// var todoFunction = kernel.CreateFunctionFromPrompt(prompt);
 
-// Console.Write("What do you need help with? ");
-// var userInput = Console.ReadLine();
-
-// var result = await todoFunction.InvokeAsync(kernel, new KernelArguments { ["input"] = userInput });
-
-// Console.WriteLine("\nHere is your to-do list:\n" + result);

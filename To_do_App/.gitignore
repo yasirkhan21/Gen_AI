@@ -1,0 +1,46 @@
+# .NET build results
+bin/
+obj/
+out/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+
+# NuGet packages
+*.nupkg
+packages/
+.nuget/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Publish output
+publish/
+*.Publish.xml
+
+# Entity Framework migrations
+Migrations/
+
+# Do not allow appsettings files to be pushed
+appsettings.json
+appsettings.*.json
+
+# Others
+*.dbmdl
+*.pdb
+*.cache
+*.ide
+*.vs/
