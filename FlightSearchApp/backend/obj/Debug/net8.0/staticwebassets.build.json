@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "QSUlI35N79rZaTKUIDYrfK6jcKHfW3ikWxj6lbx3g0U=",
+  "Source": "Gen_AI",
+  "BasePath": "_content/Gen_AI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

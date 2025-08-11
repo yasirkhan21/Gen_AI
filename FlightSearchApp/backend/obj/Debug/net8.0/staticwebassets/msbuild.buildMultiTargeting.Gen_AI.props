@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Gen_AI.props" />
+</Project>

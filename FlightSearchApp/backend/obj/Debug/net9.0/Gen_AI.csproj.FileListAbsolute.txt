@@ -1,0 +1,7 @@
+d:\Gen_AI\FlightSearchApp\backend\obj\Debug\net9.0\Gen_AI.csproj.AssemblyReference.cache
+d:\Gen_AI\FlightSearchApp\backend\obj\Debug\net9.0\Gen_AI.GeneratedMSBuildEditorConfig.editorconfig
+d:\Gen_AI\FlightSearchApp\backend\obj\Debug\net9.0\Gen_AI.AssemblyInfoInputs.cache
+d:\Gen_AI\FlightSearchApp\backend\obj\Debug\net9.0\Gen_AI.AssemblyInfo.cs
+d:\Gen_AI\FlightSearchApp\backend\obj\Debug\net9.0\Gen_AI.csproj.CoreCompileInputs.cache
+d:\Gen_AI\FlightSearchApp\backend\obj\Debug\net9.0\Gen_AI.MvcApplicationPartsAssemblyInfo.cs
+d:\Gen_AI\FlightSearchApp\backend\obj\Debug\net9.0\Gen_AI.MvcApplicationPartsAssemblyInfo.cache
