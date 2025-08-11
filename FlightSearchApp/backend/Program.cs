@@ -4,7 +4,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.Connectors.OpenAI;
-
+using Microsoft.Extensions.Configuration;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -29,13 +29,15 @@ builder.Services.AddCors(options =>
             .AllowAnyHeader());
 });
 
-// Configure Semantic Kernel
+// Configure Semantic Kernel with API Key from configuration
 builder.Services.AddSingleton<Kernel>(sp =>
 {
+    var configuration = sp.GetRequiredService<IConfiguration>();
+    string apiKey = configuration.GetValue<string>("OpenAI:ApiKey");
     var kernelBuilder = Kernel.CreateBuilder();
     kernelBuilder.AddOpenAIChatCompletion(
         "gpt-4o-mini",
-        "API_KEY_HERE" // Replace with your actual API key or use configuration
+        apiKey // Read securely from appsettings.json
     );
     return kernelBuilder.Build();
 });
